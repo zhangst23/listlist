@@ -15,7 +15,7 @@
         <li class="divider"></li>
           <li><%= link_to '创建清单', new_list_path %></li>
         <li class="divider"></li>
-          <!-- <li><%= link_to '编辑', edit_user_registration_path %></li> -->
+          <li><%=link_to current_user.email %></li>
         <li class="divider"></li>
           <li><%= link_to '退出', destroy_user_session_path, method: :delete %></li>         
          
