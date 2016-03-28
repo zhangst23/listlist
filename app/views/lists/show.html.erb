@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @list.title %>
-</p>
+<br>
+<h2><%= @list.title %></h2>
+<h6 class="subheader">创建人:用户名</h5>
+<br>
 
-<p>
-  <strong>Content:</strong>
-  <%= @list.content %>
-</p>
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<div>
+  <%= raw markdown(@list.content) %>
+</div>
+<br>
+<br>
+<br>
+<br>
+<%= link_to '修改', edit_list_path(@list), class: "tiny success hollow button" %>
+<%= link_to '返回首页', lists_path, class: "tiny alert hollow button" %>
