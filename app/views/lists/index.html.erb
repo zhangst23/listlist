@@ -1,7 +1,7 @@
 <br>
 <br>
 <div class="row">
-  <div class="medium-9 columns">
+  <div class="medium-8 columns">
     <% @lists.each do |list| %>
       <div class="list">
         <h3><%= link_to list.title, list %></h3>
@@ -13,10 +13,10 @@
   </div>
   
 
-  <div class="medium-3 columns">
+  <div class="medium-4 columns">
     <%= link_to '创建清单', new_list_path, class: "disabled button" %>
     <br>
-  	10 columns
+  	<%= render "/shared/side_node" %>
   </div>
   
 </div>
