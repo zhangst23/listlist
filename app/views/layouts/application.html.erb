@@ -17,6 +17,8 @@
 
           <%= stylesheet_link_tag    "application" %>
           <%= javascript_include_tag "vendor/custom.modernizr" %>
+          <%= javascript_include_tag "vendor/modernizr" %>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <%= csrf_meta_tags %>
         </head>
 
@@ -30,7 +32,8 @@
             <% if alert %>
               <p class="alert-box error"><%= alert %></p>
             <% end %>
-            <div class="large-8 columns">
+            
+            <div class="large-12 columns">
               <%= yield %>
             </div>
           </div>

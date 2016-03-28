@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Lists</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.title %></td>
-        <td><%= list.content %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
+<br>
+<div class="row">
+  <div class="medium-9 columns">
+    <% @lists.each do |list| %>
+      <div class="list">
+        <h3><%= link_to list.title, list %></h3>
+        <span><%= list.content %></span>
+      </div>
+    <% end %> 
+    <br>
+    <%= paginate @lists %>
+  </div>
+  
 
-<%= link_to 'New List', new_list_path %>
+  <div class="medium-3 columns">
+    <%= link_to '创建清单', new_list_path, class: "disabled button" %>
+    <br>
+  	10 columns
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+

@@ -10,39 +10,37 @@
     </ul>
 
 <section class="top-bar-section">
-<%if user_signed_in? %>
-    <ul class="right">
-      <li class="#"><a href="#">分类</a></li>
-      <li class="has-dropdown">
-        <a href="#">我</a>
-        <ul class="dropdown">
-          <li><%= link_to '主页' %></li>
-          <li><%= link_to '收藏' %></li>
-          <li><%= link_to '编辑', edit_user_registration_path %></li>
-          <li><%= link_to '退出', destroy_user_session_path, method: :delete %></li>         
-        </ul>
-      </li>
-    </ul>
-
-
-    <ul>
-        <li class="has-form">
-          <div class="row collapse">
-            <div class="large-8 small-9 columns">
-              <input type="text" placeholder="知识">
-            </div>
-            <div class="large-4 small-3 columns">
-              <a href="#" class="alert button expand">搜索</a>
-            </div>
-          </div>
-        </li>
-    </ul>
-<% else %>
-    <ul>
+  <%if user_signed_in? %>
+      <ul class="right">
         <li class="divider"></li>
-        <li><%= link_to '登陆', new_user_registration_path %></li>
-        <li><%= link_to '注册', new_user_session_path %></li>
-    </ul>
-<% end %>
+          <li><%= link_to '创建清单', new_list_path %></li>
+        <li class="divider"></li>
+          <!-- <li><%= link_to '编辑', edit_user_registration_path %></li> -->
+        <li class="divider"></li>
+          <li><%= link_to '退出', destroy_user_session_path, method: :delete %></li>         
+         
+      </ul>
+
+
+      <ul>
+          <li class="has-form">
+            <div class="row collapse">
+              <div class="large-8 small-9 columns">
+                <input type="text" placeholder="知识">
+              </div>
+              <div class="large-4 small-3 columns">
+                <a href="#" class="alert button expand">搜索</a>
+              </div>
+            </div>
+          </li>
+      </ul>
+  <% else %>
+      <ul class="right">
+          <li class="divider"></li>
+          <li><%= link_to '注册', new_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to '登陆', new_user_session_path %></li>
+      </ul>
+  <% end %>
 </section>
 </nav>

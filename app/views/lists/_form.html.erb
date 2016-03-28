@@ -1,25 +1,61 @@
-<%= form_for(@list) do |f| %>
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
-      
-      <ul>
-      <% @list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="row">
+  <div class="small-6 columns">
+    <%= simple_form_for @list do |f| %>
+        <% if @list.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+              <ul>
+              <% @list.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div class="input-group">      
+          <%= f.input :title, label: '标题', placeholder: "填写清单标题" %>
+        </div>
+
+        <div class="list-body">
+          <div class="tabs-content" data-tabs-content="example-tabs">
+            <div class="tabs-panel is-active field list_write" id="panel1">
+                <%= f.input :content, label: '内容  (兼容 Markdown 格式)', class: "text_area form-control", rows: 30  %>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="actions">
+          <%= f.submit :保存, class: "button" %>
+        </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+  <div class="small-6 columns">
+    <div class="tabs-panel list_preview" id="panel2">
+      <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+    </div>    
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
