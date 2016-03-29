@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :avatar, AvatarUploader       
-
+  has_many :lists
 
 
 

@@ -1,7 +1,7 @@
 
 <br>
 <h2><%= @list.title %></h2>
-<h6 class="subheader">创建人:用户名</h5>
+<h6 class="subheader"><%= @list.user_id %></h5>
 <br>
 
 <div>
@@ -11,5 +11,7 @@
 <br>
 <br>
 <br>
-<%= link_to '修改', edit_list_path(@list), class: "tiny success hollow button" %>
+<% if user_signed_in? %>
+	<%= link_to '修改', edit_list_path(@list), class: "tiny success hollow button" %>
+<% end %>
 <%= link_to '返回首页', lists_path, class: "tiny alert hollow button" %>
