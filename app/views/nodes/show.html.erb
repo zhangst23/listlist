@@ -5,7 +5,7 @@
 		<h2><%= @node.name %></h2>
 		<span>共有<%= @node.lists.count %>个学习清单</span>
 		<p><%= @node.summary %></p>
-		<%= render 'lists/list_list', lists: @node.lists %> 
+		<%= render '/lists/list_list', lists: @node.lists %> 
 	</div>
 
 	<div class="sidebar medium-4 columns">

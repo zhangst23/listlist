@@ -2,13 +2,8 @@ class NodesController < ApplicationController
   before_action :set_node, only: [:show, :edit, :update, :destroy, :node_list]
 
 
-  def node_list
-    @nodes = Node.name.all
-  end
-
-
   def index
-  	@nodes = Node.all.order(created_at: :desc)
+  	@nodes = Node.all
   end
 
   def show
@@ -70,9 +65,6 @@ class NodesController < ApplicationController
     def node_params
       params.require(:node).permit(:name, :summary)
     end
-
-
-
 
 
 

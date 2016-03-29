@@ -5,9 +5,13 @@
 				<%= link_to list.title, list %>
 			</h2>
 			<p>
-	          <%= link_to list.node.name, list.node, class: "node" %>
+			  <%= truncate(list.content, length: 99) %>
+			  <br>			
+			  	<%= link_to list.node.name, list.node, class: "node" if list.node.present? %>		
 	          <span> . </span>
-	          <%= link_to "user.name", class: "user_link"%>
+	          <%= link_to "user.name", nil, class: "user_link"%>
+	          <span> . </span>
+
 	        </p>
 		</li>
 	<% end %>

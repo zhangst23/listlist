@@ -75,7 +75,8 @@ rails generate controller Comments
 
 
 
-
+  <%= render "/shared/side_node" %>
+              <%= link_to list.node.name, list.node, class: "node" %>
 
 
 
