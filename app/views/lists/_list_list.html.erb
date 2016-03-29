@@ -9,7 +9,9 @@
 			  <br>			
 			  	<%= link_to list.node.name, list.node, class: "node" if list.node.present? %>		
 	          <span> . </span>
-	          <%= link_to "user.name", nil, class: "user_link"%>
+	          <%= link_to list.user.name, user_path(list.user), class: "user" if list.user.present? %>
+
+	       
 	          <span> . </span>
 
 	        </p>

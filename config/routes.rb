@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :lists, only: [:index, :show, :new]
+  resources :lists, only: [:index, :show, :new, :create]
   devise_for :users
   resources :users
-  resources :nodes, only: [:show, :index] 
+  resources :nodes, only: [:show, :index, :create] 
 
   root 'lists#index'
 

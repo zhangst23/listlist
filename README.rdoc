@@ -27,7 +27,17 @@ rails generate controller Comments
 
 
 
-
+<li class="has-dropdown">
+          <a href="#">我</a>
+          <ul class="dropdown">
+            <li class="divider"></li>
+            <li><%= link_to '创建清单', new_list_path %></li>
+            <li class="divider"></li>
+            <li><%=link_to "编辑", edit_user_registration_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to '退出', destroy_user_session_path, method: :delete %></li> 
+          </ul>
+        </li>
 
 
 
@@ -76,11 +86,10 @@ rails generate controller Comments
 
 
   <%= render "/shared/side_node" %>
-              <%= link_to list.node.name, list.node, class: "node" %>
 
 
 
-
+<%= render 'shared/breadcrumb', links: [["首页"], ], ["清单", list_path], [@list.node.name, @list.node ], ["浏览帖子", ""] %>
 
 
 
