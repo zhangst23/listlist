@@ -1,5 +1,10 @@
 class NodesController < ApplicationController
-  before_action :set_node, only: [:show, :edit, :update, :destroy]
+  before_action :set_node, only: [:show, :edit, :update, :destroy, :node_list]
+
+
+  def node_list
+    @nodes = Node.name.all
+  end
 
 
   def index

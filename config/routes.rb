@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :lists
   devise_for :users
   resources :users
-  resources :nodes, only: [:show] 
+  resources :nodes, only: [:show, :node_list] 
 
   root 'lists#index'
 
