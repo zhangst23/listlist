@@ -1,15 +1,24 @@
 # user
 rails g devise User
+rails g migration add_name_to_users name:string
+rails g migration add_user_id_to_lists user_id:integer
 
 # list
 rails g scaffold list title:string content:text
 
 # node
-rails g scaffold node name:string
+rails g model Node name:string summary:string
+rails g migration add_node_id_to_lists node_id:integer
+rails generate controller Nodes
+rake db:migrate
+rails g migration add_node_name_to_lists node_name:string
+rake db:migrate
 
 
 
-
+# comment
+rails generate model Comment commenter:string body:text list:references
+rails generate controller Comments
 
 
 

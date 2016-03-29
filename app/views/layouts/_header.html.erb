@@ -32,7 +32,14 @@
         </li>
          
       </ul>
-
+  <% else %>
+      <ul class="right">
+          <li class="divider"></li>
+          <li><%= link_to '注册', new_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to '登陆', new_user_session_path %></li>
+      </ul>
+  <% end %>
 
       <ul>
           <li class="has-form">
@@ -46,14 +53,7 @@
             </div>
           </li>
       </ul>
-  <% else %>
-      <ul class="right">
-          <li class="divider"></li>
-          <li><%= link_to '注册', new_user_registration_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to '登陆', new_user_session_path %></li>
-      </ul>
-  <% end %>
+  
 </section>
 
 </nav>

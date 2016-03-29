@@ -5,7 +5,12 @@
     <% @lists.each do |list| %>
       <div class="list">
         <h3><%= link_to list.title, list %></h3>
-        <p><%= truncate(list.content, length:99) %></p>
+        <p><%= truncate(list.content, length:70) %></p>
+        <p>
+          <%= link_to list.node.name, list.node, class: "node" %>
+          <span> . </span>
+          <%= link_to "user.name", class: "user_link"%>
+        </p>
       </div>
     <% end %> 
     <br>

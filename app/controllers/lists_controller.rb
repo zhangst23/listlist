@@ -4,7 +4,7 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.all.order(created_at: :desc).page(params[:page]).per(5)
+    @lists = List.all.order(created_at: :desc).page(params[:page]).per(15)
   end
 
   # GET /lists/1

@@ -13,7 +13,10 @@
             </div>
         <% end %>
 
-        <div class="input-group">      
+        <div class="input-group">
+          <span class="node-select input-group-btn">
+            <%= render_list_node_select_tag(@list) %>
+          </span>      
           <%= f.input :title, label: '标题', placeholder: "填写清单标题" %>
         </div>
 
